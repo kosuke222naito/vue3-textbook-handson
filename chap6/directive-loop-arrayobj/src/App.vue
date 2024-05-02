@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import type { Cocktail } from "../../interfaces";
 
 const cocktailsInit: Cocktail[] = [
   { id: 2345, name: "ホワイトレディ", price: 1200 },
@@ -8,12 +9,6 @@ const cocktailsInit: Cocktail[] = [
   { id: 8429, name: "マティーニ", price: 1500 },
 ];
 const cocktails = ref(cocktailsInit);
-
-interface Cocktail {
-  id: number;
-  name: string;
-  price: number;
-}
 </script>
 
 <template>

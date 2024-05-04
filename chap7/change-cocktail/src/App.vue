@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-
-interface Cocktail {
-  id: number;
-  name: string;
-  price: number;
-  recipe?: string;
-}
+import type { Cocktail } from "../../interfaces.ts";
 
 const cocktailsInit = new Map<number, Cocktail>();
 cocktailsInit.set(1, { id: 1, name: "ホワイトレディ", price: 1200 });

@@ -36,6 +36,7 @@ const pointUp = (): void => {
       <dt>備考</dt>
       <dd>{{ localNote }}</dd>
     </dl>
+    <button type="button" @click="pointUp">ポイント加算</button>
   </section>
 </template>
 

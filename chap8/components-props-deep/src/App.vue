@@ -36,13 +36,13 @@ interface Member {
     <h1>会員リスト</h1>
     <p>全会員の合計ポイント: {{ totalPoints }}</p>
     <OneMember
-      v-for="[id, member] in members"
-      :key="id"
+      v-for="[key, { id, name, email, points, note }] in members"
+      :key
       :id
-      :name="member.name"
-      :email="member.email"
-      :points="member.points"
-      :note="member.note"
+      :name
+      :email
+      :points
+      :note
     />
   </section>
 </template>

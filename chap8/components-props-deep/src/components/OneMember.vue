@@ -13,7 +13,7 @@ const props = defineProps<Props>();
 const localPoints = ref(props.points);
 const localNote = computed((): string => {
   if (!props.note) {
-    return "";
+    return "--";
   }
   return props.note;
 });

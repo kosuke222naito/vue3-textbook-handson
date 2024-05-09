@@ -42,7 +42,7 @@ interface Member {
       :name="member.name"
       :email="member.email"
       :note="member.note"
-      v-model:points="member.points"
+      v-model="member.points"
     />
   </section>
 </template>

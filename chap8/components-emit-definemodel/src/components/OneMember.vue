@@ -5,15 +5,11 @@ interface Props {
   id: number;
   name: string;
   email: string;
-  points: number;
   note?: string;
 }
 const props = defineProps<Props>();
 
-interface Emits {
-  (event: "update:points", points: number): void;
-}
-const emit = defineEmits<Emits>();
+const points = defineModel<number>();
 
 const localNote = computed((): string => {
   if (!props.note) {
@@ -21,10 +17,6 @@ const localNote = computed((): string => {
   }
   return props.note;
 });
-
-const onInput = (event: Event): void => {
-  emit("update:points", Number((event.target as HTMLInputElement).value));
-};
 </script>
 
 <template>
@@ -36,7 +28,7 @@ const onInput = (event: Event): void => {
       <dt>メールアドレス</dt>
       <dd>{{ email }}</dd>
       <dt>ポイント</dt>
-      <dd><input type="number" :value="points" @input="onInput" /></dd>
+      <dd><input type="number" v-model="points" /></dd>
       <dt>備考</dt>
       <dd>{{ localNote }}</dd>
     </dl>
